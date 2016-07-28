@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 export class AppComponent { 
     title = 'My First Angular 2 App';
     headerColor = 'blue';
+    name = 'Tomas';
 
     buttonClick() {
         var color = this.headerColor === 'blue' ? 'red' : 'blue';
