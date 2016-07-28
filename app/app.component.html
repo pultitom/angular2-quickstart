@@ -2,10 +2,11 @@
 
 <button (click)="buttonClick()">Change title color</button>
 
+<h2>Changing name</h2>
 <p>
     Hello {{name}}
 </p>
-<h2>The ugly way to change name:</h2>
+<h3>The ugly way to change name:</h3>
 <p>
     Changes name while typing: <input type="text" [value]="name" (keyup)="name = $event.target.value" />
 </p>
@@ -15,7 +16,14 @@
 <p>
     Changes name on blur: <input type="text" [value]="name" (blur)="name = $event.target.value" />
 </p>
-<h2>The preferred way to change name:</h2>
+<h3>The preferred way to change name:</h3>
 <p>
     Changes name while typing: <input type="text" [(ngModel)]="name" />
 </p>
+
+<h2>Iteration</h2>
+<ul>
+    <li *ngFor="let c of customers">
+        <app-customer [customer]="c"></app-customer>
+    </li>
+</ul>
