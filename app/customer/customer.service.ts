@@ -10,13 +10,13 @@ export class CustomerService {
     getCustomers() {
         return this._http.get('app/customers.json')
             .map((response: Response) => response.json())
+            .toPromise()
             .catch(this._handleError);
     }
 
     _handleError(err: any) {
-
-        console.log(err);
-        return Observable.throw(err);
+        console.log(err);   // should be customized error
+        return Promise.reject(err);
     }
 
 }
