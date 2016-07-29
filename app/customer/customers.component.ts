@@ -4,6 +4,8 @@ import { CustomerComponent } from './customer.component';
 
 import { CustomerService } from './customer.service';
 
+import { Observable } from 'rxjs/Rx';
+
 @Component({
     moduleId: module.id,
     selector: 'app-customers',
@@ -12,7 +14,7 @@ import { CustomerService } from './customer.service';
     providers: [CustomerService]
 })
 export class CustomersComponent implements OnInit {
-    customers: any[];
+    customers: Observable<any[]>;
 
     constructor(private _customerService: CustomerService) { }
 
