@@ -1,14 +1,13 @@
 import { Component } from '@angular/core';
-import { HTTP_PROVIDERS } from '@angular/http';
 
-import { CustomersComponent } from './customer/customers.component';
+import { CustomersComponent, CustomerService } from './customer/index';  // actually ./customer/index.ts but index.ts is known by convention
 
 @Component({
     moduleId: module.id,
     selector: 'my-app',
     templateUrl: 'app.component.html',
     directives: [CustomersComponent],
-    providers: [HTTP_PROVIDERS]
+    providers: [CustomerService]
 })
 export class AppComponent { 
     title = 'My First Angular 2 App';

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { HTTP_PROVIDERS } from '@angular/http';
 
 import { CustomerComponent } from './customer.component';
-
 import { CustomerService } from './customer.service';
 
 import { Observable } from 'rxjs/Rx';
@@ -11,7 +11,7 @@ import { Observable } from 'rxjs/Rx';
     selector: 'app-customers',
     templateUrl: 'customers.component.html',
     directives: [CustomerComponent],
-    providers: [CustomerService]
+    providers: [CustomerService, HTTP_PROVIDERS]
 })
 export class CustomersComponent implements OnInit {
     customers: any[];
@@ -20,12 +20,11 @@ export class CustomersComponent implements OnInit {
 
     ngOnInit() {
         this._customerService.getCustomers()
-            .then((customers) => {
+            .then((customers: any) => {
                 this.customers = customers;
             })
             .catch((err: any) => {
                 console.log(err); // friendly error should go here
             });
     }
-
 }
