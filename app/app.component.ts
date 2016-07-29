@@ -1,25 +1,17 @@
 import { Component } from '@angular/core';
 
-import { CustomerComponent } from './customer/customer.component';
+import { CustomersComponent } from './customer/customers.component';
 
 @Component({
+    moduleId: module.id,
     selector: 'my-app',
-    templateUrl: 'app/app.component.html',
-    directives: [CustomerComponent]
+    templateUrl: 'app.component.html',
+    directives: [CustomersComponent]
 })
 export class AppComponent { 
     title = 'My First Angular 2 App';
     headerColor = 'blue';
     name = 'Tomas';
-
-    customers = [
-        { id: 1, name: "Tomas" },
-        { id: 2, name: "John" },
-        { id: 3, name: "Arnold" },
-        { id: 4, name: "Matt" },
-        { id: 5, name: "Katrin" }
-    ];
-
 
     buttonClick() {
         var color = this.headerColor === 'blue' ? 'red' : 'blue';
